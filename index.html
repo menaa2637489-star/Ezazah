@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>إزازة | مطبخنا</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="topbar">
+      <a class="brand" href="Ezaza.html" aria-label="إزازة - الرئيسية">
+        <span class="brand-mark">
+          <i class="fas fa-bottle-water"></i>
+        </span>
+
+        <span>
+          <strong data-ar="إزازة" data-en="Ezazah">إزازة</strong>
+          <small data-ar="كل خير البيت في إزازة" data-en="Everyday goodness, bottled">
+            كل خير البيت في إزازة
+          </small>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <button id="languageToggle" class="outline-btn" type="button">
+          <i class="fas fa-globe"></i> English
+        </button>
+
+        <button id="ordersButton" class="outline-btn" type="button">
+          <i class="fas fa-receipt"></i>
+          <span data-ar="طلباتي" data-en="My orders">طلباتي</span>
+        </button>
+
+        <button id="cartButton" class="cart-button" type="button">
+          <i class="fas fa-shopping-basket"></i>
+          <span data-ar="السلة" data-en="Cart">السلة</span>
+          <b id="cartCount">0</b>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <i class="fas fa-search"></i>
+      <input id="searchInput" type="search"
+             placeholder="ابحثي عن وصفة أو مكوّن..."
+             aria-label="Search recipes">
+      <button id="clearSearch" type="button" aria-label="Clear search">×</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SLIDER -->
+    <section class="hero-slider" aria-label="مطبخ إزازة ووصفاته">
+
+      <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1600&q=85" alt="حبوب وأرز">
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <span data-ar="وصفات من خير البيت" data-en="Recipes from everyday essentials">وصفات من خير البيت</span>
+          <h1 data-ar="مطبخنا من إزازة" data-en="Ezazah Kitchen">مطبخنا من إزازة</h1>
+          <p data-ar="اكتشفي وصفات سهلة بمكونات من مطبخك، خطوة بخطوة." data-en="Discover easy recipes made with everyday kitchen ingredients.">اكتشفي وصفات سهلة بمكونات من مطبخك، خطوة بخطوة.</p>
+          <a href="#products" class="primary-btn" data-ar="اكتشفي الوصفات" data-en="Explore recipes">اكتشفي الوصفات</a>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=1600&q=85" alt="مكونات طعام">
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <span data-ar="أفكار لوجباتك" data-en="Ideas for your meals">أفكار لوجباتك</span>
+          <h2 data-ar="وصفات بسيطة ولذيذة" data-en="Simple and delicious recipes">وصفات بسيطة ولذيذة</h2>
+          <p data-ar="اختاري المكوّن وشوفي المقادير وطريقة التحضير." data-en="Choose an ingredient and explore the ingredients and method.">اختاري المكوّن وشوفي المقادير وطريقة التحضير.</p>
+          <a href="#products" class="primary-btn" data-ar="ابدئي الطبخ" data-en="Start cooking">ابدئي الطبخ</a>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85" alt="مكونات مطبخ">
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <span data-ar="من إزازة لبيتك" data-en="From Ezazah to your home">من إزازة لبيتك</span>
+          <h2 data-ar="من المكونات للطبق" data-en="From ingredients to plate">من المكونات للطبق</h2>
+          <p data-ar="كل وصفة فيها مقادير واضحة وخطوات سهلة للتنفيذ." data-en="Every recipe includes clear ingredients and simple steps.">كل وصفة فيها مقادير واضحة وخطوات سهلة للتنفيذ.</p>
+          <a href="#products" class="primary-btn" data-ar="شاهدي الوصفات" data-en="View recipes">شاهدي الوصفات</a>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=85" alt="طبق طعام متنوع">
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <span data-ar="أفكار جديدة كل يوم" data-en="Fresh ideas every day">أفكار جديدة كل يوم</span>
+          <h2 data-ar="نوّعي سفرتك" data-en="Bring variety to your table">نوّعي سفرتك</h2>
+          <p data-ar="أفكار ووصفات متنوعة باستخدام مكونات متوفرة." data-en="Varied recipes using everyday ingredients.">أفكار ووصفات متنوعة باستخدام مكونات متوفرة.</p>
+          <a href="#products" class="primary-btn" data-ar="اكتشفي المزيد" data-en="Discover more">اكتشفي المزيد</a>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&q=85" alt="وجبة صحية">
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <span data-ar="كل يوم وصفة" data-en="A recipe for every day">كل يوم وصفة</span>
+          <h2 data-ar="هنطبخ إيه النهارده؟" data-en="What shall we cook today?">هنطبخ إيه النهارده؟</h2>
+          <p data-ar="اختاري من وصفات سهلة تناسب يومك." data-en="Choose easy recipes for your day.">اختاري من وصفات سهلة تناسب يومك.</p>
+          <a href="#products" class="primary-btn" data-ar="اختاري وصفتك" data-en="Choose a recipe">اختاري وصفتك</a>
+        </div>
+      </div>
+
+      <button class="slider-arrow prev" id="prevSlide" type="button" aria-label="Previous slide">❮</button>
+      <button class="slider-arrow next" id="nextSlide" type="button" aria-label="Next slide">❯</button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro-section">
+      <span class="eyebrow" data-ar="أهلًا بيكي في مطبخنا" data-en="Welcome to our kitchen">أهلًا بيكي في مطبخنا</span>
+      <h2 data-ar="أفكار سهلة لكل يوم" data-en="Easy ideas for every day">أفكار سهلة لكل يوم</h2>
+      <p data-ar="اختاري أي منتج علشان تشوفي تفاصيله والمقادير وطريقة التحضير." data-en="Choose an ingredient to see its details, recipe ingredients and method.">اختاري أي منتج علشان تشوفي تفاصيله والمقادير وطريقة التحضير.</p>
+      <small data-ar="المقادير قابلة للتعديل حسب الكمية." data-en="Ingredients can be adjusted according to quantity.">المقادير قابلة للتعديل حسب الكمية.</small>
+    </section>
+
+    <!-- RECIPES -->
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow" data-ar="اختاري المكوّن" data-en="Choose an ingredient">اختاري المكوّن</span>
+          <h2 data-ar="وصفات مطبخنا" data-en="Our kitchen recipes">وصفات مطبخنا</h2>
+        </div>
+        <span id="resultsCount" class="results-count">وصفات متنوعة</span>
+      </div>
+
+      <nav class="category-filters" id="categoryFilters" aria-label="Recipe categories"></nav>
+      <div id="productsGrid" class="products-grid"></div>
+
+      <p id="emptyState" class="empty-state" hidden data-ar="مفيش وصفات مطابقة لبحثك." data-en="No recipes match your search.">مفيش وصفات مطابقة لبحثك.</p>
+    </section>
+
+    <!-- ABOUT STRIP -->
+    <section class="why-section">
+      <div class="why-icon">
+        <i class="fas fa-bottle-water"></i>
+      </div>
+      <div>
+        <h2 data-ar="وصفات بخطوات واضحة ومكونات متوفرة" data-en="Recipes with clear steps and available ingredients">وصفات بخطوات واضحة ومكونات متوفرة</h2>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="Ezaza.html" class="footer-logo-circle" aria-label="Ezazah Home">
+          <img src="logo.jpeg" alt="Ezazah Logo">
+        </a>
+        <a href="Ezaza.html" class="footer-brand-name" data-ar="إزازة" data-en="Ezazah">إزازة</a>
+      </div>
+
+      <div class="footer-center">
+        <div class="footer-about">
+          <button class="footer-title about-toggle" id="aboutToggle" type="button"
+                  aria-expanded="false" aria-controls="aboutTooltip"
+                  data-ar="من نحن" data-en="About Us">من نحن</button>
+          <div class="about-tooltip" id="aboutTooltip">
+            <p data-ar="إزازة براند بيقدم المنتجات الغذائية بطريقة عملية ونظيفة، مع اهتمامنا بالحفاظ على جودة المنتجات وتقديم تجربة مختلفة لعملائنا"
+               data-en="Ezazah is a brand that offers food products in a practical and clean way, focusing on quality and providing our customers with a different experience.">
+              إزازة براند بيقدم المنتجات الغذائية بطريقة عملية ونظيفة، مع اهتمامنا بالحفاظ على جودة المنتجات وتقديم تجربة مختلفة لعملائنا
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <span class="footer-title" data-ar="تابعينا" data-en="Follow Us">تابعينا</span>
+        </div>
+      </div>
+
+      <div class="footer-left">
+        <h3 data-ar="تابعينا على" data-en="Follow Us On">تابعينا على</h3>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-ar="جميع الحقوق محفوظة 2026" data-en="All Rights Reserved 2026">جميع الحقوق محفوظة 2026</p>
+      <button id="dashboardBtn" class="dashboard-button" type="button" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</button>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <button id="whatsappButton" class="whatsapp-float" type="button" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+
+  <!-- PAGE OVERLAY -->
+  <div id="pageOverlay" class="page-overlay"></div>
+
+  <!-- SHOPPING CART DRAWER -->
+  <aside id="cartDrawer" class="side-drawer" aria-label="Shopping cart">
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow" data-ar="طلبك" data-en="Your order">طلبك</span>
+        <h2 data-ar="سلة التسوق" data-en="Shopping cart">سلة التسوق</h2>
+      </div>
+      <button class="icon-btn close-drawer" data-close="cartDrawer" type="button" aria-label="Close">×</button>
+    </div>
+
+    <div id="cartItems" class="drawer-content"></div>
+
+    <div class="drawer-footer">
+      <div class="total-line">
+        <span data-ar="الإجمالي" data-en="Total">الإجمالي</span>
+        <strong id="cartTotal">0 ج.م</strong>
+      </div>
+
+      <button id="clearCart" class="text-btn" type="button" data-ar="إفراغ السلة" data-en="Clear cart">إفراغ السلة</button>
+      <button id="checkoutButton" class="primary-btn full-btn" type="button" data-ar="إتمام الطلب" data-en="Checkout">إتمام الطلب</button>
+    </div>
+  </aside>
+
+  <!-- MY ORDERS DRAWER -->
+  <aside id="ordersDrawer" class="side-drawer" aria-label="Orders">
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow" data-ar="متابعة" data-en="Keep track">متابعة</span>
+        <h2 data-ar="طلباتي" data-en="My orders">طلباتي</h2>
+      </div>
+      <button class="icon-btn close-drawer" data-close="ordersDrawer" type="button" aria-label="Close">×</button>
+    </div>
+    <div id="ordersList" class="drawer-content"></div>
+  </aside>
+
+  <!-- RECIPE DETAILS MODAL (PRESERVED) -->
+  <div id="productModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+    <div class="modal-card recipe-modal-card">
+      <button class="icon-btn modal-close" data-close="productModal" type="button" aria-label="Close">×</button>
+
+      <div class="recipe-modal-top">
+        <div id="recipeFoodIcon" class="recipe-food-icon">🍚</div>
+        <div>
+          <span class="eyebrow" id="modalProductCategory"></span>
+          <h2 id="modalProductName"></h2>
+          <p id="modalProductDescription"></p>
+        </div>
+      </div>
+
+      <div class="recipe-layout">
+        <div class="recipe-details">
+          <div class="recipe-content">
+            <section class="recipe-block">
+              <h3 data-ar="المقادير" data-en="Ingredients">المقادير</h3>
+              <ul id="recipeIngredients"></ul>
+            </section>
+
+            <section class="recipe-block">
+              <h3 data-ar="الخطوات وطريقة التحضير" data-en="Steps & method">الخطوات وطريقة التحضير</h3>
+              <ol id="recipeSteps"></ol>
+            </section>
+          </div>
+          <div id="recipeNotes" class="recipe-notes"></div>
+        </div>
+
+        <section class="recipe-video-block">
+          <h3 data-ar="فيديو الوصفة" data-en="Recipe video">فيديو الوصفة</h3>
+          <div class="recipe-video-placeholder">
+            <i class="fas fa-circle-play"></i>
+            <p data-ar="مكان فيديو شرح طريقة التحضير" data-en="Recipe preparation video goes here">مكان فيديو شرح طريقة التحضير</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="recipe-modal-actions">
+        <div class="modal-price" id="modalPrice"></div>
+        <button id="addToCartButton" class="primary-btn" type="button"
+                data-ar="أضيفي المنتج للسلة" data-en="Add product to cart">أضيفي المنتج للسلة</button>
+      </div>
+
+      <div class="quantity-row">
+        <button id="modalMinus" type="button" aria-label="Decrease quantity">−</button>
+        <span id="modalQuantity">1</span>
+        <button id="modalPlus" type="button" aria-label="Increase quantity">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL: MATCHED TO PRODUCTS PAGE -->
+  <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal-card checkout-card">
+      <button class="icon-btn modal-close" data-close="checkoutModal" type="button" aria-label="Close">×</button>
+
+      <span class="eyebrow" data-ar="خطوة أخيرة" data-en="One last step">خطوة أخيرة</span>
+      <h2 id="checkoutTitle" data-ar="تأكيد الطلب" data-en="Confirm order">تأكيد الطلب</h2>
+
+      <form id="checkoutForm">
+        <label for="customerName" data-ar="الاسم" data-en="Name">الاسم</label>
+        <input id="customerName" name="customerName" required autocomplete="name">
+
+        <label for="customerPhone" data-ar="رقم الموبايل" data-en="Phone number">رقم الموبايل</label>
+        <input id="customerPhone" name="customerPhone" type="tel" required autocomplete="tel">
+
+        <label for="customerAddress" data-ar="العنوان" data-en="Address">العنوان</label>
+        <textarea id="customerAddress" name="customerAddress" rows="3" required></textarea>
+
+        <label for="paymentMethod" data-ar="طريقة الدفع" data-en="Payment method">طريقة الدفع</label>
+        <select id="paymentMethod" name="paymentMethod">
+          <option value="cash" data-ar="كاش عند الاستلام" data-en="Cash on delivery">كاش عند الاستلام</option>
+          <option value="wallet" data-ar="محفظة إلكترونية" data-en="E-wallet">محفظة إلكترونية</option>
+          <option value="visa" data-ar="فيزا" data-en="Visa">فيزا</option>
+        </select>
+
+        <div class="checkout-total">
+          <span data-ar="إجمالي الطلب" data-en="Order total">إجمالي الطلب</span>
+          <strong id="checkoutTotal">0 ج.م</strong>
+        </div>
+
+        <button class="primary-btn full-btn" type="submit" data-ar="تأكيد الطلب" data-en="Place order">تأكيد الطلب</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

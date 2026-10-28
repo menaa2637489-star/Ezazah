@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إزازة | Ezazah</title>
+
+    <!-- Fonts: Keep the existing fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Ezaza style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="main-header">
+
+        <!-- Logo on the right -->
+        <div class="header-brand">
+
+            <a href="Ezaza.html" class="logo-circle" aria-label="Ezazah Home">
+                <img src="logo.jpeg" alt="Ezazah Logo">
+            </a>
+
+            <a href="Ezaza.html"
+               class="brand-name"
+               data-ar="إزازة"
+               data-en="Ezazah">
+                إزازة
+            </a>
+
+        </div>
+
+        <!-- Social icons -->
+        <div class="header-right">
+
+            <a href="https://www.facebook.com/"
+               class="header-social"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/"
+               class="header-social"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+        <!-- Language and cart -->
+        <div class="header-left">
+
+            <button id="languageBtn"
+                    class="header-square language-button"
+                    type="button">
+                English
+            </button>
+
+            <button id="cartBtn"
+                    class="header-square cart-button"
+                    type="button">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span data-ar="السلة" data-en="Cart">
+                    السلة
+                </span>
+
+                <span id="cartCount" class="cart-count">0</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SLIDER
+    ========================== -->
+
+    <section class="hero-section">
+
+        <div class="hero-slider">
+
+            <div class="hero-slide active">
+                <img src="hero1.jpg" alt="Ezazah">
+            </div>
+
+            <div class="hero-slide">
+                <img src="hero2.jpg" alt="Ezazah">
+            </div>
+
+            <div class="hero-slide">
+                <img src="hero3.jpg" alt="Ezazah">
+            </div>
+
+            <div class="hero-slide">
+                <img src="hero4.jpg" alt="Ezazah">
+            </div>
+
+            <!-- Slider arrows -->
+
+            <button id="heroPrev"
+                    class="hero-arrow hero-prev"
+                    type="button"
+                    aria-label="Previous slide">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <button id="heroNext"
+                    class="hero-arrow hero-next"
+                    type="button"
+                    aria-label="Next slide">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <!-- Slider dots -->
+
+            <div class="hero-dots">
+
+                <button class="hero-dot active"
+                        type="button"
+                        aria-label="Slide 1"></button>
+
+                <button class="hero-dot"
+                        type="button"
+                        aria-label="Slide 2"></button>
+
+                <button class="hero-dot"
+                        type="button"
+                        aria-label="Slide 3"></button>
+
+                <button class="hero-dot"
+                        type="button"
+                        aria-label="Slide 4"></button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN CHOICES
+    ========================== -->
+
+    <main>
+
+        <section class="main-cards-section">
+
+            <div class="main-cards-container">
+
+                <!-- Products -->
+
+                <a href="product.html" class="main-card">
+
+                    <div class="main-card-icon">
+                        <img src="products-icon.png" alt="Products">
+                    </div>
+
+                    <div class="main-card-content">
+
+                        <h2 data-ar="منتجاتنا" data-en="Our Products">
+                            منتجاتنا
+                        </h2>
+
+                        <p
+                            data-ar="اختاري من منتجاتنا المختارة بعناية"
+                            data-en="Choose from our carefully selected products">
+                            اختاري من منتجاتنا المختارة بعناية
+                        </p>
+
+                    </div>
+
+                    <span class="card-button"
+                          data-ar="اكتشفي منتجاتنا"
+                          data-en="Explore Products">
+                        اكتشفي منتجاتنا
+                    </span>
+
+                </a>
+
+                <!-- Kitchen -->
+
+                <a href="index.html" class="main-card">
+
+                    <div class="main-card-icon">
+                        <i class="fa-solid fa-kitchen-set"></i>
+                    </div>
+
+                    <div class="main-card-content">
+
+                        <h2 data-ar="مطبخنا" data-en="Our Kitchen">
+                            مطبخنا
+                        </h2>
+
+                        <p
+                            data-ar="أفكار ومنتجات لكل مطبخ"
+                            data-en="Ideas and products for every kitchen">
+                            أفكار ومنتجات لكل مطبخ
+                        </p>
+
+                    </div>
+
+                    <span class="card-button"
+                          data-ar="اكتشفي مطبخنا"
+                          data-en="Explore Our Kitchen">
+                        اكتشفي مطبخنا
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY EZAZAH
+        ========================== -->
+
+        <section class="why-bottle-intro">
+
+            <div class="why-bottle-box">
+
+                <h2 data-ar="ليه إزازة؟" data-en="Why Ezazah?">
+                    ليه إزازة؟
+                </h2>
+
+                <p
+                    data-ar="لأن الإزازة بتحافظ على جودة المنتجات وتحميها من الرطوبة والهواء بشكل أفضل من الأكياس. بنقدملك منتجاتك في عبوة عملية ونظيفة تحافظ على الطعم والجودة لأطول وقت."
+                    data-en="Because bottles help preserve product quality and protect food from moisture and air better than bags. We offer your products in a clean and practical package that helps maintain their taste and quality for longer.">
+                    لأن الإزازة بتحافظ على جودة المنتجات وتحميها من الرطوبة والهواء بشكل أفضل من الأكياس.
+                    بنقدملك منتجاتك في عبوة عملية ونظيفة تحافظ على الطعم والجودة لأطول وقت.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BOTTLE EXPLANATION
+        ========================== -->
+
+        <section class="bottle-section">
+
+            <div class="bottle-container">
+
+                <div class="bottle-image">
+
+                    <img src="product-rice.jpg" alt="Product in Bottle">
+
+                </div>
+
+                <div class="bottle-content">
+
+                    <h2
+                        data-ar="إزازة تحافظ على منتجك"
+                        data-en="A Bottle That Protects Your Product">
+                        إزازة تحافظ على منتجك
+                    </h2>
+
+                    <h3
+                        data-ar="جودة أفضل من أول لحظة لآخر استخدام"
+                        data-en="Better quality from the first moment to the last use">
+                        جودة أفضل من أول لحظة لآخر استخدام
+                    </h3>
+
+                    <p
+                        data-ar="اخترنا الإزازة لأنها بتوفر حماية أفضل للمنتجات، وبتساعد على الحفاظ على جودتها وطعمها، بعيدًا عن الرطوبة والهواء والعوامل الخارجية."
+                        data-en="We chose bottles because they provide better protection for food products and help preserve their quality and taste away from moisture, air and external factors.">
+                        اخترنا الإزازة لأنها بتوفر حماية أفضل للمنتجات،
+                        وبتساعد على الحفاظ على جودتها وطعمها،
+                        بعيدًا عن الرطوبة والهواء والعوامل الخارجية.
+                    </p>
+
+                    <div class="bottle-points">
+
+                        <div class="bottle-point">
+                            <i class="fa-solid fa-check"></i>
+                            <span
+                                data-ar="تحافظ على جودة المنتج"
+                                data-en="Preserves product quality">
+                                تحافظ على جودة المنتج
+                            </span>
+                        </div>
+
+                        <div class="bottle-point">
+                            <i class="fa-solid fa-check"></i>
+                            <span
+                                data-ar="تحمي من الرطوبة والهواء"
+                                data-en="Protects from moisture and air">
+                                تحمي من الرطوبة والهواء
+                            </span>
+                        </div>
+
+                        <div class="bottle-point">
+                            <i class="fa-solid fa-check"></i>
+                            <span
+                                data-ar="عملية ونظيفة وسهلة الاستخدام"
+                                data-en="Practical, clean and easy to use">
+                                عملية ونظيفة وسهلة الاستخدام
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer class="main-footer">
+
+    <div class="footer-content">
+
+        <!-- Right: Logo -->
+
+        <div class="footer-brand">
+
+            <a href="Ezaza.html"
+               class="footer-logo-circle"
+               aria-label="Ezazah Home">
+
+                <img src="logo.jpeg" alt="Ezazah Logo">
+
+            </a>
+
+            <a href="Ezaza.html"
+               class="footer-brand-name"
+               data-ar="إزازة"
+               data-en="Ezazah">
+                إزازة
+            </a>
+
+        </div>
+
+
+        <!-- Center: About and Important Links -->
+
+        <div class="footer-center">
+
+            <div class="footer-about">
+
+                <button
+                    class="footer-title about-toggle"
+                    id="aboutToggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="aboutTooltip"
+                    data-ar="من نحن"
+                    data-en="About Us">
+                    من نحن
+                </button>
+
+                <div class="about-tooltip"
+                     id="aboutTooltip">
+
+                    <p
+                        data-ar="إزازة براند بيقدم المنتجات الغذائية بطريقة عملية ونظيفة، مع اهتمامنا بالحفاظ على جودة المنتجات وتقديم تجربة مختلفة لعملائنا"
+                        data-en="Ezazah is a brand that offers food products in a practical and clean way, focusing on quality and providing our customers with a different experience.">
+                        إزازة براند بيقدم المنتجات الغذائية بطريقة عملية ونظيفة،
+                        مع اهتمامنا بالحفاظ على جودة المنتجات وتقديم تجربة مختلفة لعملائنا
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="privacy-policy.html"
+                   class="footer-title"
+                   data-ar="سياسة الخصوصية"
+                   data-en="Privacy Policy">
+                    سياسة الخصوصية
+                </a>
+
+                <a href="terms-of-use.html"
+                   class="footer-title"
+                   data-ar="شروط الاستخدام"
+                   data-en="Terms of Use">
+                    شروط الاستخدام
+                </a>
+
+                <a href="https://wa.me/201227371995"
+                   class="footer-title"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-ar="تواصل معنا"
+                   data-en="Contact Us">
+                    تواصل معنا
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Left: Social Media -->
+
+        <div class="footer-left">
+
+            <h3 data-ar="تابعينا على" data-en="Follow Us On">
+                تابعينا على
+            </h3>
+
+            <div class="footer-social">
+
+                <a href="https://www.instagram.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Copyright -->
+
+    <div class="footer-bottom">
+
+        <p
+            data-ar="جميع الحقوق محفوظة 2026"
+            data-en="All Rights Reserved 2026">
+            جميع الحقوق محفوظة 2026
+        </p>
+
+    </div>
+
+</footer>
+
+    <!-- =========================
+         FLOATING WHATSAPP
+    ========================== -->
+
+    <a
+        href="https://wa.me/201277371995"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+    <!-- =========================
+         CART OVERLAY
+    ========================== -->
+
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <aside id="cartPanel" class="cart-panel">
+
+        <div class="cart-header">
+
+            <h2 data-ar="سلة المشتريات" data-en="Shopping Cart">
+                سلة المشتريات
+            </h2>
+
+            <button id="closeCart"
+                    class="close-cart"
+                    type="button"
+                    aria-label="Close cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total-row">
+
+                <span data-ar="الإجمالي" data-en="Total">
+                    الإجمالي
+                </span>
+
+                <strong>
+                    <span id="cartTotal">0</span>
+                    EGP
+                </strong>
+
+            </div>
+
+            <button id="checkoutBtn"
+                    class="checkout-button"
+                    type="button"
+                    data-ar="إتمام الطلب"
+                    data-en="Checkout">
+                إتمام الطلب
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         CHECKOUT MODAL
+    ========================== -->
+
+    <div id="checkoutModal" class="checkout-modal">
+
+        <div class="checkout-box">
+
+            <button id="closeCheckout"
+                    class="checkout-close"
+                    type="button"
+                    aria-label="Close checkout">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2 data-ar="إتمام الطلب" data-en="Complete Order">
+                إتمام الطلب
+            </h2>
+
+            <p
+                data-ar="سيتم إضافة تفاصيل الطلب والدفع هنا."
+                data-en="Order and payment details will be added here.">
+                سيتم إضافة تفاصيل الطلب والدفع هنا.
+            </p>
+
+            <button id="backFromCheckout"
+                    class="back-checkout"
+                    type="button"
+                    data-ar="رجوع"
+                    data-en="Back">
+                رجوع
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="Ezaza script.js"></script>
+
+</body>
+
+</html>

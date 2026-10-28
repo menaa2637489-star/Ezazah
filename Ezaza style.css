@@ -1,0 +1,1808 @@
+/* =========================
+   1. COLORS & GENERAL
+========================= */
+
+:root {
+    --gray-dark: #35383b;
+    --gray-mid: #484c4f;
+    --gray-light: #62676a;
+    --cream: #f5f1e8;
+    --cream-light: #fbf9f4;
+    --gold: #c6a15b;
+    --gold-light: #d8bc82;
+    --text: #303438;
+    --white: #ffffff;
+    --border: #e4dfd5;
+    --shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Playfair Display", "Cairo", serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   2. HEADER
+========================= */
+
+.main-header {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    min-height: 120px;
+    padding: 14px clamp(18px, 5vw, 75px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: linear-gradient(
+        115deg,
+        var(--gray-dark),
+        var(--gray-mid) 60%,
+        var(--gray-light)
+    );
+
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo and Ezazah name */
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.logo-circle {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    border: 2px solid var(--gold-light);
+    border-radius: 50%;
+    background: var(--cream-light);
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.13);
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.brand-name {
+    color: var(--white);
+    font-family: "Playfair Display", "Cairo", serif;
+    font-size: clamp(31px, 3.5vw, 47px);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.brand-name:hover {
+    color: var(--gold-light);
+}
+
+/* Header social icons */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-inline-start: auto;
+    margin-inline-end: 20px;
+}
+
+.header-social {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+
+    color: var(--white);
+    font-size: 17px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.header-social:hover {
+    background: var(--gold);
+    color: var(--gray-dark);
+    transform: translateY(-2px);
+}
+
+/* Language and cart */
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.header-square {
+    min-height: 45px;
+    padding: 9px 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 5px;
+
+    background: transparent;
+    color: var(--white);
+
+    font-family: "Cairo", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.header-square:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.cart-button {
+    background: var(--cream-light);
+    color: var(--gray-dark);
+    border-color: var(--cream-light);
+}
+
+.cart-button:hover {
+    background: var(--gold-light);
+    color: var(--gray-dark);
+}
+
+.cart-count {
+    min-width: 23px;
+    height: 23px;
+    padding: 0 5px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--gray-dark);
+
+    font-family: "Cairo", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   3. HERO SLIDER
+========================= */
+
+.hero-section {
+    width: 100%;
+    background: var(--cream);
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    min-height: 280px;
+    max-height: 580px;
+
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.65s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Slider arrows */
+
+.hero-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+
+    background: rgba(53, 56, 59, 0.72);
+    color: var(--white);
+
+    font-size: 16px;
+
+    transition: background 0.2s ease;
+}
+
+.hero-arrow:hover {
+    background: var(--gray-dark);
+}
+
+.hero-prev {
+    right: 22px;
+}
+
+.hero-next {
+    left: 22px;
+}
+
+/* Slider dots */
+
+.hero-dots {
+    position: absolute;
+    bottom: 17px;
+    left: 50%;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    transform: translateX(-50%);
+}
+
+.hero-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+
+    border: 1px solid var(--gray-dark);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-dot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.15);
+}
+
+
+/* =========================
+   4. MAIN CARDS
+========================= */
+
+.main-cards-section {
+    width: 100%;
+    padding: 55px 24px 35px;
+}
+
+.main-cards-container {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.main-card {
+    min-width: 0;
+    min-height: 245px;
+    padding: 28px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--cream-light);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.045);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.main-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: var(--shadow);
+}
+
+.main-card-icon {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--gold-light);
+    border-radius: 50%;
+
+    background: #f0e9dc;
+    color: var(--gray-dark);
+
+    font-size: 28px;
+}
+
+.main-card-icon img {
+    width: 37px;
+    height: 37px;
+    object-fit: contain;
+}
+
+.main-card-content h2 {
+    margin-bottom: 5px;
+    color: var(--gray-dark);
+    font-size: clamp(22px, 2.5vw, 29px);
+    font-style: italic;
+}
+
+.main-card-content p {
+    color: #6d6d68;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.card-button {
+    margin-top: 5px;
+    padding: 9px 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--gray-dark);
+    border-radius: 5px;
+
+    background: var(--gray-dark);
+    color: var(--white);
+
+    font-family: "Cairo", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.main-card:hover .card-button {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--gray-dark);
+}
+
+
+/* =========================
+   5. WHY EZAZAH
+========================= */
+
+.why-bottle-intro {
+    width: 100%;
+    padding: 20px 24px 45px;
+}
+
+.why-bottle-box {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    padding: 35px clamp(22px, 5vw, 65px);
+
+    border: 1px solid #62676a;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        115deg,
+        var(--gray-dark),
+        var(--gray-mid) 60%,
+        var(--gray-light)
+    );
+
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.why-bottle-box h2 {
+    margin-bottom: 12px;
+    color: var(--white);
+    font-size: clamp(25px, 3vw, 35px);
+    font-style: italic;
+}
+
+.why-bottle-box p {
+    max-width: 850px;
+    margin: 0 auto;
+
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+
+/* =========================
+   6. BOTTLE EXPLANATION
+========================= */
+
+.bottle-section {
+    width: 100%;
+    padding: 10px 24px 75px;
+}
+
+.bottle-container {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    padding: 28px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 35px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--cream-light);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.bottle-image {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+    border-radius: 8px;
+
+    background: #eee9df;
+}
+
+.bottle-image img {
+    width: 100%;
+    min-height: 280px;
+    max-height: 430px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.bottle-content {
+    min-width: 0;
+}
+
+.bottle-content h2 {
+    margin-bottom: 10px;
+    color: var(--gray-dark);
+    font-size: clamp(25px, 3vw, 34px);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.bottle-content h3 {
+    margin-bottom: 13px;
+    color: #77715f;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.bottle-content p {
+    color: #62625d;
+    font-size: 14px;
+    line-height: 2.1;
+}
+
+.bottle-points {
+    margin-top: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bottle-point {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--gray-dark);
+    font-family: "Cairo", sans-serif;
+    font-size: 13px;
+}
+
+.bottle-point i {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #e6dfd0;
+    color: var(--gray-dark);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   7. FOOTER
+========================= */
+
+.main-footer {
+    padding: 42px clamp(20px, 5vw, 75px) 18px;
+
+    background: linear-gradient(
+        115deg,
+        var(--gray-dark),
+        var(--gray-mid) 60%,
+        var(--gray-light)
+    );
+
+    color: var(--white);
+}
+
+.footer-content {
+    width: min(1250px, 100%);
+    margin: 0 auto;
+    padding-bottom: 30px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 35px;
+
+    direction: rtl;
+}
+
+/* Right: footer logo */
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.footer-logo-circle {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    border: 2px solid var(--gold-light);
+    border-radius: 50%;
+
+    background: var(--cream-light);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.14);
+}
+
+.footer-logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.footer-brand-name {
+    color: var(--white);
+    font-family: "Playfair Display", "Cairo", serif;
+    font-size: 35px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.3;
+
+    transition: color 0.2s ease;
+}
+
+.footer-brand-name:hover {
+    color: var(--gold-light);
+}
+
+/* Center: About Us */
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+/* Footer links */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links .footer-title {
+    text-align: center;
+}
+.footer-about {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    background: transparent;
+    color: var(--white);
+
+    font-family: "Playfair Display", "Cairo", serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.footer-title:hover {
+    color: var(--gold-light);
+}
+
+/* About popup */
+
+.about-tooltip {
+    position: absolute;
+    top: auto;
+    bottom: calc(100% + 14px);
+    right: 50%;
+    z-index: 150;
+
+    width: min(320px, 80vw);
+    padding: 17px;
+
+    border: 1px solid var(--gold-light);
+    border-radius: 9px;
+
+    background: var(--cream-light);
+    color: var(--text);
+
+    text-align: right;
+    font-family: "Cairo", sans-serif;
+    font-size: 13px;
+    line-height: 2;
+
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(50%, 8px);
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Hover support */
+
+.footer-about:hover .about-tooltip,
+.footer-about:focus-within .about-tooltip,
+.about-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(50%, 0);
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+}
+
+/* Left: social links */
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-left h3 {
+    color: var(--white);
+    font-family: "Cairo", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 50%;
+
+    color: var(--white);
+    font-size: 23px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--gray-dark);
+    transform: translateY(-3px);
+}
+/* Copyright and dashboard */
+
+.footer-bottom {
+    width: min(1250px, 100%);
+    min-height: 65px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #e1ded8;
+    font-family: "Cairo", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    order: 1;
+}
+
+.dashboard-button {
+    padding: 8px 16px;
+    order: 2;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 5px;
+
+    background: transparent;
+    color: var(--white);
+
+    font-family: "Cairo", sans-serif;
+    font-size: 12px;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dashboard-button:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--gray-dark);
+}
+
+
+/* =========================
+   8. WHATSAPP FLOATING BUTTON
+========================= */
+
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 180;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+
+    background: #25d366;
+    color: #ffffff;
+
+    font-size: 32px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   9. CART OVERLAY
+========================= */
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 190;
+
+    background: rgba(0, 0, 0, 0.48);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.cart-overlay.active,
+.cart-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* =========================
+   10. CART PANEL
+========================= */
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+
+    width: min(440px, 100%);
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: var(--cream-light);
+    color: var(--text);
+
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+
+    transform: translateX(105%);
+    visibility: hidden;
+
+    transition: transform 0.3s ease, visibility 0.3s ease;
+}
+
+.cart-panel.open,
+.cart-panel.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.cart-header {
+    min-height: 76px;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    border-bottom: 1px solid var(--border);
+    background: var(--cream-light);
+}
+
+.cart-header h2 {
+    color: var(--gray-dark);
+    font-size: 20px;
+}
+
+.close-cart,
+.checkout-close {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #ebe7df;
+    color: var(--gray-dark);
+
+    font-size: 21px;
+}
+
+.close-cart:hover,
+.checkout-close:hover {
+    background: var(--gold-light);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.cart-empty {
+    padding: 35px 10px;
+    color: #777;
+    text-align: center;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 12px;
+
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cart-item img {
+    width: 65px;
+    height: 72px;
+
+    object-fit: cover;
+    border-radius: 6px;
+    background: #eee9df;
+}
+
+.cart-item-info {
+    min-width: 0;
+}
+
+.cart-item-info h4 {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.cart-item-info p {
+    margin-top: 3px;
+    color: #777;
+    font-family: "Cairo", sans-serif;
+    font-size: 12px;
+}
+
+.cart-item-actions {
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.cart-item-actions button {
+    min-width: 28px;
+    min-height: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 4px;
+
+    background: var(--white);
+    color: var(--gray-dark);
+}
+
+.cart-item-actions .remove-item {
+    padding: 3px 8px;
+    color: #984747;
+    font-family: "Cairo", sans-serif;
+    font-size: 11px;
+}
+
+.cart-footer {
+    padding: 18px;
+
+    border-top: 1px solid var(--border);
+    background: #f0ece3;
+}
+
+.cart-total-row {
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    font-family: "Cairo", sans-serif;
+    font-size: 14px;
+}
+
+.cart-total-row strong {
+    color: var(--gray-dark);
+    font-size: 17px;
+}
+
+.checkout-button {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 15px;
+
+    border: 1px solid var(--gray-dark);
+    border-radius: 5px;
+
+    background: var(--gray-dark);
+    color: var(--white);
+
+    font-family: "Cairo", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.checkout-button:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--gray-dark);
+}
+
+
+/* =========================
+   11. CHECKOUT MODAL
+========================= */
+
+.checkout-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.58);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.checkout-modal.active,
+.checkout-modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.checkout-box {
+    position: relative;
+
+    width: min(460px, 100%);
+    padding: 35px 25px 25px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--cream-light);
+    color: var(--text);
+
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.checkout-box h2 {
+    margin-bottom: 12px;
+    color: var(--gray-dark);
+    font-size: 25px;
+}
+
+.checkout-box p {
+    margin-bottom: 22px;
+    color: #686862;
+    font-family: "Cairo", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.checkout-close {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.back-checkout {
+    min-width: 115px;
+    padding: 9px 18px;
+
+    border: 1px solid var(--gray-dark);
+    border-radius: 5px;
+
+    background: transparent;
+    color: var(--gray-dark);
+
+    font-family: "Cairo", sans-serif;
+    font-size: 13px;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.back-checkout:hover {
+    background: var(--gray-dark);
+    color: var(--white);
+}
+
+
+/* =========================
+   12. ENGLISH LAYOUT
+========================= */
+
+body.english {
+    direction: ltr;
+    text-align: left;
+}
+
+body.english .main-header {
+    direction: ltr;
+}
+
+body.english .header-brand {
+    flex-direction: row;
+}
+
+body.english .header-left {
+    flex-direction: row;
+}
+
+body.english .footer-content {
+    direction: ltr;
+}
+
+body.english .about-tooltip {
+    right: auto;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%, 8px);
+}
+
+body.english .footer-about:hover .about-tooltip,
+body.english .footer-about:focus-within .about-tooltip,
+body.english .about-tooltip.show {
+    transform: translate(-50%, 0);
+}
+
+body.english .bottle-point {
+    direction: ltr;
+}
+
+body.english .cart-panel {
+    right: auto;
+    left: 0;
+    transform: translateX(-105%);
+}
+
+body.english .cart-panel.open,
+body.english .cart-panel.active {
+    transform: translateX(0);
+}
+
+body.english .checkout-close {
+    left: auto;
+    right: 12px;
+}
+
+
+/* =========================
+   13. TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .main-header {
+        gap: 16px;
+        padding-inline: 25px;
+    }
+
+    .logo-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    .brand-name {
+        font-size: 34px;
+    }
+
+    .header-right {
+        margin-inline-end: 0;
+        gap: 7px;
+    }
+
+    .header-left {
+        gap: 7px;
+    }
+
+    .header-square {
+        padding-inline: 10px;
+    }
+
+    .bottle-container {
+        gap: 24px;
+        padding: 22px;
+    }
+
+    .footer-content {
+        gap: 22px;
+    }
+}
+
+
+/* =========================
+   14. MOBILE
+========================= */
+
+@media (max-width: 760px) {
+
+    /* Header */
+
+    .main-header {
+        min-height: auto;
+        padding: 14px 15px;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .header-brand {
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .logo-circle {
+        width: 61px;
+        height: 61px;
+    }
+
+    .brand-name {
+        font-size: clamp(25px, 6vw, 34px);
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .header-left {
+        grid-column: 1 / -1;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .header-square {
+        min-height: 42px;
+        flex: 1;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    /* Hero */
+
+    .hero-slider {
+        aspect-ratio: 4 / 3;
+        min-height: 240px;
+        max-height: 400px;
+    }
+
+    .hero-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .hero-prev {
+        right: 10px;
+    }
+
+    .hero-next {
+        left: 10px;
+    }
+
+    .hero-dots {
+        bottom: 11px;
+    }
+
+    /* Main cards */
+
+    .main-cards-section {
+        padding: 35px 15px 22px;
+    }
+
+    .main-cards-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .main-card {
+        min-height: 220px;
+        padding: 24px 18px;
+    }
+
+    .main-card-content h2 {
+        font-size: 25px;
+    }
+
+    .main-card-content p {
+        font-size: 13px;
+    }
+
+    /* Why Ezazah */
+
+    .why-bottle-intro {
+        padding: 15px 15px 30px;
+    }
+
+    .why-bottle-box {
+        padding: 27px 19px;
+        border-radius: 16px;
+    }
+
+    .why-bottle-box h2 {
+        font-size: 27px;
+    }
+
+    .why-bottle-box p {
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    /* Bottle section */
+
+    .bottle-section {
+        padding: 0 15px 45px;
+    }
+
+    .bottle-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 17px;
+        border-radius: 10px;
+    }
+
+    .bottle-image img {
+        min-height: 200px;
+        max-height: 320px;
+    }
+
+    .bottle-content h2 {
+        font-size: 26px;
+    }
+
+    .bottle-content h3 {
+        font-size: 15px;
+    }
+
+    .bottle-content p {
+        font-size: 13px;
+    }
+
+    /* Footer */
+
+    .main-footer {
+        padding: 32px 18px 15px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 28px;
+        padding-bottom: 27px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .footer-logo-circle {
+        width: 88px;
+        height: 88px;
+    }
+
+    .footer-brand-name {
+        font-size: 31px;
+    }
+
+    .footer-center {
+        grid-column: auto;
+        grid-row: auto;
+        gap: 15px;
+    }
+
+    .footer-left {
+        grid-column: auto;
+        grid-row: auto;
+        gap: 12px;
+    }
+
+    .footer-title {
+        font-size: 19px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 17px;
+    }
+
+    .footer-bottom p {
+        font-size: 11px;
+    }
+
+    /* WhatsApp */
+
+    .whatsapp-float {
+        right: 14px;
+        bottom: 15px;
+        width: 51px;
+        height: 51px;
+        font-size: 28px;
+    }
+
+    /* Cart */
+
+    .cart-panel {
+        width: min(410px, 100%);
+    }
+
+    .cart-header {
+        min-height: 67px;
+        padding: 13px 15px;
+    }
+
+    .cart-header h2 {
+        font-size: 18px;
+    }
+
+    .cart-items {
+        padding: 13px;
+    }
+
+    .cart-footer {
+        padding: 15px;
+    }
+
+    /* Checkout */
+
+    .checkout-box {
+        padding: 35px 18px 22px;
+    }
+
+    .checkout-box h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================
+   15. SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+
+    .main-header {
+        padding-inline: 11px;
+    }
+
+    .logo-circle {
+        width: 53px;
+        height: 53px;
+    }
+
+    .brand-name {
+        font-size: 25px;
+    }
+
+    .header-square {
+        padding-inline: 7px;
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .cart-count {
+        min-width: 19px;
+        height: 19px;
+        font-size: 10px;
+    }
+
+    .hero-slider {
+        min-height: 210px;
+    }
+
+    .main-card {
+        min-height: 205px;
+    }
+
+    .why-bottle-box {
+        padding-inline: 15px;
+    }
+
+    .bottle-container {
+        padding: 13px;
+    }
+
+    .footer-logo-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about-tooltip {
+        width: min(280px, 85vw);
+    }
+}
+
+
+/* =========================
+   16. REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+/* =========================
+   SHARED CART & CHECKOUT ADDITIONS
+========================= */
+
+.cart-item {
+    grid-template-columns: 58px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 10px;
+}
+
+.cart-item-image {
+    width: 58px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #eee9df;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-item-emoji,
+.cart-empty-icon {
+    font-size: 30px;
+}
+
+.cart-item-info h4 {
+    overflow-wrap: anywhere;
+}
+
+.cart-quantity {
+    min-width: 22px;
+    text-align: center;
+    font-family: "Cairo", sans-serif;
+    font-size: 13px;
+}
+
+.cart-line-total {
+    font-family: "Cairo", sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.cart-empty {
+    padding: 35px 10px;
+    color: #777;
+    text-align: center;
+}
+
+.clear-cart-button {
+    width: 100%;
+    min-height: 40px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--gray-dark);
+    font-family: "Cairo", sans-serif;
+    font-size: 13px;
+}
+
+.clear-cart-button:hover {
+    background: #ebe7df;
+}
+
+.checkout-form-box {
+    max-height: 90dvh;
+    overflow-y: auto;
+    text-align: start;
+}
+
+.checkout-form-box h2 {
+    text-align: center;
+}
+
+#checkoutForm {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: "Cairo", sans-serif;
+}
+
+#checkoutForm label {
+    color: var(--gray-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#checkoutForm input,
+#checkoutForm textarea,
+#checkoutForm select {
+    width: 100%;
+    min-height: 43px;
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #fff;
+    color: var(--text);
+    font-family: "Cairo", sans-serif;
+    font-size: 14px;
+}
+
+#checkoutForm textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+.checkout-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 10px 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: "Cairo", sans-serif;
+}
+
+#checkoutForm .back-checkout {
+    align-self: center;
+}
