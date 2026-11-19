@@ -301,28 +301,59 @@
   </div>
 
   <!-- CHECKOUT MODAL: MATCHED TO PRODUCTS PAGE -->
-  <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+  <div id="checkoutModal"
+    class="modal" 
+    role="dialog" aria-modal="true" 
+    aria-labelledby="checkoutTitle">
     <div class="modal-card checkout-card">
-      <button class="icon-btn modal-close" data-close="checkoutModal" type="button" aria-label="Close">×</button>
+      <button class="icon-btn modal-close"
+        data-close="checkoutModal"
+        type="button" 
+        aria-label="Close">×</button>
 
-      <span class="eyebrow" data-ar="خطوة أخيرة" data-en="One last step">خطوة أخيرة</span>
-      <h2 id="checkoutTitle" data-ar="تأكيد الطلب" data-en="Confirm order">تأكيد الطلب</h2>
+      <span class="eyebrow" 
+        data-ar="خطوة أخيرة" 
+        data-en="One last step">خطوة أخيرة</span>
+      <h2 id="checkoutTitle"
+        data-ar="تأكيد الطلب" 
+        data-en="Confirm order">تأكيد الطلب</h2>
 
       <form id="checkoutForm">
-        <label for="customerName" data-ar="الاسم" data-en="Name">الاسم</label>
-        <input id="customerName" name="customerName" required autocomplete="name">
+        <label for="customerName" 
+          data-ar="الاسم" data-en="Name">الاسم</label>
+        <input id="customerName" 
+          name="customerName" required autocomplete="name">
 
-        <label for="customerPhone" data-ar="رقم الموبايل" data-en="Phone number">رقم الموبايل</label>
-        <input id="customerPhone" name="customerPhone" type="tel" required autocomplete="tel">
+        <label for="customerPhone" 
+          data-ar="رقم الموبايل" 
+          data-en="Phone number">رقم الموبايل</label>
+        <input id="customerPhone"
+          name="customerPhone" 
+          type="tel" required autocomplete="tel">
 
-        <label for="customerAddress" data-ar="العنوان" data-en="Address">العنوان</label>
-        <textarea id="customerAddress" name="customerAddress" rows="3" required></textarea>
+        <label for="customerAddress"
+          data-ar="العنوان"
+          data-en="Address">العنوان</label>
+        <textarea id="customerAddress" 
+          name="customerAddress" 
+          rows="3" required>
+          
+          </textarea>
 
-        <label for="paymentMethod" data-ar="طريقة الدفع" data-en="Payment method">طريقة الدفع</label>
-        <select id="paymentMethod" name="paymentMethod">
-          <option value="cash" data-ar="كاش عند الاستلام" data-en="Cash on delivery">كاش عند الاستلام</option>
-          <option value="wallet" data-ar="محفظة إلكترونية" data-en="E-wallet">محفظة إلكترونية</option>
-          <option value="visa" data-ar="فيزا" data-en="Visa">فيزا</option>
+        <label for="paymentMethod"
+          data-ar="طريقة الدفع" 
+          data-en="Payment method">طريقة الدفع</label>
+        <select id="paymentMethod"
+          name="paymentMethod">
+          <option value="cash"
+            data-ar="كاش عند الاستلام"
+            data-en="Cash on delivery">كاش عند الاستلام</option>
+          <option value="wallet"
+            data-ar="محفظة إلكترونية"
+            data-en="E-wallet">محفظة إلكترونية</option>
+          <option value="visa"
+            data-ar="فيزا"
+            data-en="Visa">فيزا</option>
         </select>
 
         <div class="checkout-total">
@@ -330,13 +361,19 @@
           <strong id="checkoutTotal">0 ج.م</strong>
         </div>
 
-        <button class="primary-btn full-btn" type="submit" data-ar="تأكيد الطلب" data-en="Place order">تأكيد الطلب</button>
+        <button class="primary-btn full-btn" 
+          type="submit" 
+          data-ar="تأكيد الطلب" 
+          data-en="Place order">تأكيد الطلب</button>
       </form>
     </div>
   </div>
 
   <!-- TOAST -->
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="toast" 
+    class="toast"
+    role="status" 
+    aria-live="polite"></div>
 
   <!-- JAVASCRIPT -->
   <script src="script.js"></script>
